@@ -8,7 +8,7 @@ function Page() {
       <section id="home">
         <Home />
       </section>
-      <section id="abput">
+      <section id="about">
         <About />
       </section>
     </div>
