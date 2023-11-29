@@ -3,7 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 // import { Link } from "react-router-dom";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import {
   AiOutlineHome,
   AiOutlineUser,
@@ -46,26 +46,36 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={ScrollLink} to="home" onClick={() => updateExpanded(false)}>
+          <Nav.Item>
+              <Nav.Link
+                as={Link}
+                href="#home"
+                to="home"
+                spy={true}
+                smooth={true}
+                offset={0}
+                duration={200}
+                onClick={() => updateExpanded(false)}
+              >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
-                as={ScrollLink}
+                as={Link}
+                href="#about"
                 to="about"
                 spy={true}
                 smooth={true}
-                offset={0}
-                duration={500}
+                offset={70}
+                duration={200}
                 onClick={() => updateExpanded(false)}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
-
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

@@ -38,6 +38,14 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="*" element={<Navigate to="/"/>} />
         </Routes> */}
+        {/* <div>
+          <section id="home">
+            <Home />
+          </section>
+          <section id="about">
+            <About />
+          </section>
+        </div> */}
         <Page />
         <Footer />
       </div>
