@@ -4,7 +4,7 @@ import Particle from "../Particle";
 import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 // import Portrait from "../../Assets/personal_photo.jpg";
-import Tilt from "react-parallax-tilt";
+// import Tilt from "react-parallax-tilt";
 
 function About() {
   return (
