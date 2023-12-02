@@ -198,20 +198,9 @@ button:focus {
   transition: all 0.3s ease-out 0s;
 }
 
-.active {
-  height: 5px;
-  position: relative;
-  display: block;
-  width: 0;
-  border-radius: 16px;
-  background: #c95bf5;
-  bottom: 1px;
-  left: 0;
-  z-index: -1;
-  transition: all 0.3s ease-out 0s;
+.navbar-nav .nav-item a.active::after {
   width: 100%;
 }
-
 
 .navbar-nav .nav-item a:hover::after {
   width: 100%;

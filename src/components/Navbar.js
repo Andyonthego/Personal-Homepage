@@ -12,7 +12,6 @@ import {
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
-  const [activeSection, setActiveSection] = useState(null);
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -57,7 +56,6 @@ function NavBar() {
                 offset={0}
                 duration={200}
                 onClick={() => updateExpanded(false)}
-                activeClass={activeSection === "home" ? "active" : ""}
               >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
@@ -73,7 +71,6 @@ function NavBar() {
                 offset={70}
                 duration={200}
                 onClick={() => updateExpanded(false)}
-                activeClass={activeSection === "about" ? "active" : ""}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
