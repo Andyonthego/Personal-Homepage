@@ -202,8 +202,8 @@ button:focus {
   width: 100%;
 }
 
-.navbar-nav .nav-item a:hover::after {
-  width: 100%;
+.navbar-nav .nav-item a:hover {
+  color: #c95bf5 !important; 
 }
 
 /* --------- */

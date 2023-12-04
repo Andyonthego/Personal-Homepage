@@ -11,6 +11,9 @@ function Page() {
       <section id="about">
         <About />
       </section>
+      <section id="home2">
+        <Home />
+      </section>
     </div>
   );
 }
