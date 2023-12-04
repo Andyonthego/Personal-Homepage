@@ -75,13 +75,10 @@ function NavBar() {
                 to="home"
                 smooth={true}
                 offset={0}
-                duration={0}
+                duration={200}
                 active={activeSection === "home"}
                 onClick={() => {
                   updateExpanded(false);
-                  setTimeout(() => {
-                    setActiveSection("home");
-                  }, 0);
                 }}
               >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
@@ -95,13 +92,10 @@ function NavBar() {
                 to="about"
                 smooth={true}
                 offset={0}
-                duration={0}
+                duration={200}
                 active={activeSection === "about"}
                 onClick={() => {
                   updateExpanded(false);
-                  setTimeout(() => {
-                    setActiveSection("about");
-                  }, 0);
                 }}
               >
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
@@ -115,13 +109,10 @@ function NavBar() {
                 to="home2"
                 smooth={true}
                 offset={0}
-                duration={0}
+                duration={200}
                 active={activeSection === "home2"}
                 onClick={() => {
                   updateExpanded(false);
-                  setTimeout(() => {
-                    setActiveSection("home2");
-                  }, 0);
                 }}
               >
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home2
