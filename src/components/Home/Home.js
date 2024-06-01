@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.png";
 import Particle from "../Particle";
-import Home2 from "./Home2";
 // import Type from "./Type";
 
 function Home() {
@@ -11,23 +10,25 @@ function Home() {
       <Container fluid className="home-section" id="home">
         <Particle />
         <Container className="home-content">
-          <Row>
+          <Row style={{ marginTop: '-80px' }}>
             <Col md={7} className="home-header">
-              <h1 style={{ paddingBottom: 15 }} className="heading">
+              <h1 style={{ textAlign: "left" }} className="heading">
                 Hi!{" "}
                 <span className="emoji" role="img" aria-labelledby="wave">
                   😊
                 </span>
+                {"    "}It's
+                <strong className="main-name"> Andrea. </strong>
               </h1>
-
-              <h1 className="heading-name">
-                It's
-                <strong className="main-name"> Andrea Z. </strong>
-              </h1>
-
-              {/* <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div> */}
+              <p className="home-about-body" style={{textAlign: "left"}}>
+              I'm a Master of Professional Computer Science student in 
+              <i>
+                <b className="purple"> Simon Fraser University. </b>
+              </i>
+              <br />
+              <br />
+              I'm a Full Stack Developer, a Data Engineer, and a Machine Learning enthusiast.
+            </p>
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
@@ -41,7 +42,6 @@ function Home() {
           </Row>
         </Container>
       </Container>
-      <Home2 />
     </section>
   );
 }

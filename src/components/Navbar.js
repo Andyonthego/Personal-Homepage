@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-scroll";
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
+import { MdOutlineSchool, MdWorkOutline, MdOutlineCode } from "react-icons/md";
 
 function NavBar() {
   const [expand, updateExpanded] = useState(false);
@@ -19,23 +20,36 @@ function NavBar() {
 
     const windowHeight = window.innerHeight;
     // Determine the active section based on scroll position
-    const homeElement = document.getElementById("home");
-    const aboutElement = document.getElementById("about");
-    const home2Element = document.getElementById("home2");
-
-    const homeRect = homeElement && homeElement.getBoundingClientRect();
-    const aboutRect = aboutElement && aboutElement.getBoundingClientRect();
-    const home2Rect = home2Element && home2Element.getBoundingClientRect();
+    const catalog = [
+      { id: "home", element: document.getElementById("home") },
+      { id: "education", element: document.getElementById("education") },
+      { id: "work", element: document.getElementById("work") },
+      { id: "about", element: document.getElementById("about") },
+      { id: "contact", element: document.getElementById("contact") },
+    ];
     
-    if (homeRect && homeRect.top <= windowHeight / 2 && homeRect.bottom >= windowHeight / 2) {
-      setActiveSection("home");
-    } else if (aboutRect && aboutRect.top <= windowHeight / 2 && aboutRect.bottom >= windowHeight / 2) {
-      setActiveSection("about");
-    } else if (home2Rect && home2Rect.top <= windowHeight / 2 && home2Rect.bottom >= windowHeight / 2) {
-      setActiveSection("home2");
-    } else {
-      setActiveSection(null);
+    // 
+    function getElementRect(element) {
+      return element ? element.getBoundingClientRect() : null;
     }
+    
+    // 
+    function isElementActive(rect) {
+      return rect && rect.top <= windowHeight / 2 && rect.bottom >= windowHeight / 2;
+    }
+    
+    // 
+    let activeSection = null;
+    
+    for (let item of catalog) {
+      const rect = getElementRect(item.element);
+      if (isElementActive(rect)) {
+        activeSection = item.id;
+        break;
+      }
+    }
+    
+    setActiveSection(activeSection);
     
   }
 
@@ -84,6 +98,41 @@ function NavBar() {
                 <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
               </Nav.Link>
             </Nav.Item>
+            
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                href="#education"
+                to="education"
+                smooth={true}
+                offset={0}
+                duration={200}
+                active={activeSection === "education"}
+                onClick={() => {
+                  updateExpanded(false);
+                }}
+              >
+                <MdOutlineSchool style={{ marginBottom: "2px" }} /> Education
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link
+                as={Link}
+                href="#work"
+                to="work"
+                smooth={true}
+                offset={0}
+                duration={200}
+                active={activeSection === "work"}
+                onClick={() => {
+                  updateExpanded(false);
+                }}
+              >
+                <MdWorkOutline style={{ marginBottom: "2px" }} /> Work Experience
+              </Nav.Link>
+            </Nav.Item>
+
 
             <Nav.Item>
               <Nav.Link
@@ -98,24 +147,24 @@ function NavBar() {
                   updateExpanded(false);
                 }}
               >
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
+                <MdOutlineCode style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
               <Nav.Link
                 as={Link}
-                href="#home2"
-                to="home2"
+                href="#contact"
+                to="contact"
                 smooth={true}
                 offset={0}
                 duration={200}
-                active={activeSection === "home2"}
+                active={activeSection === "contact"}
                 onClick={() => {
                   updateExpanded(false);
                 }}
               >
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home2
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> Contact
               </Nav.Link>
             </Nav.Item>
           </Nav>

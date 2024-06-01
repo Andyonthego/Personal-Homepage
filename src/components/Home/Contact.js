@@ -9,7 +9,7 @@ import {
 } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
-function Home2() {
+function Contact() {
   return (
     <Container fluid className="home-about-section" id="about-me">
       <Container>
@@ -86,4 +86,4 @@ function Home2() {
     </Container>
   );
 }
-export default Home2;
+export default Contact;
