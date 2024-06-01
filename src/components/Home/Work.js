@@ -52,7 +52,7 @@ function Work() {
                 src={Bosch}
                 alt="bosch"
                 className="img-fluid"
-                style={{ maxHeight: "150px" }}
+                style={{ maxWidth: "300px", marginTop:'40px' }}
               />
             </Col>
             <Col md={6} className="school-experience">
