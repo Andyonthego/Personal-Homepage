@@ -26,7 +26,7 @@ function About() {
         <h1 className="purple">
           Tech Stack
         </h1>
-
+        <br />
         <Techstack />
 
       </Container>
